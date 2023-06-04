@@ -1,0 +1,434 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Recap App API",
+        "description": "Cara login:\n * Login menggunakan endpoint `/authentication` dengan email dan password Anda.\n * Salin token dari respon yang dihasilkan, pada bagian `data.data.access_token`.\n * Klik tombol Authorize di pojok kanan atas.\n * Masukkan token, dengan format:  `Bearer <access_token>`.\n * Klik tombol Authorize.",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "/api/v1/",
+            "description": "LIVE server"
+        }
+    ],
+    "paths": {
+        "/products": {
+            "get": {
+                "tags": [
+                    "Product"
+                ],
+                "summary": "Get a listing of User.",
+                "description": "Get all Users",
+                "operationId": "46d7e6b7b0d21a971c0fd31400f55d92",
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Product"
+                ],
+                "summary": "Store a newly created Nps in storage",
+                "description": "Store Nps",
+                "operationId": "5d7ee765feb2052f10363a3d121ebd5e",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Product"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ]
+            }
+        },
+        "/products/{id}": {
+            "put": {
+                "tags": [
+                    "Product"
+                ],
+                "summary": "Update the specified Invoice in storage",
+                "description": "Update Finance Invoice",
+                "operationId": "1b73c420e0cf9fb1cb88dcf445b9428b",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "id of Finance Invoice",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Product"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Product"
+                ],
+                "summary": "Remove the specified products from storage",
+                "description": "Delete products",
+                "operationId": "4618152b49c17cc0c19dfed9ba73aa46",
+                "parameters": [
+                    {
+                        "name": "product_code",
+                        "in": "path",
+                        "description": "product_code of products",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ]
+            }
+        },
+        "/sales": {
+            "get": {
+                "tags": [
+                    "Sales"
+                ],
+                "summary": "Get a listing of the Finance sales.",
+                "description": "Get all Finance sales",
+                "operationId": "5d05873e763145a9c38a183e8da6073f",
+                "parameters": [
+                    {
+                        "name": "search",
+                        "in": "query",
+                        "description": "Search by sales code, buyer name, phone",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "start_date",
+                        "in": "query",
+                        "description": "Filter by date, starting date. YYYY-MM-DD",
+                        "required": false,
+                        "schema": {
+                            "type": "string"
+                        }
+                    },
+                    {
+                        "name": "end_date",
+                        "in": "query",
+                        "description": "Filter by date, ending date. YYYY-MM-DD",
+                        "required": false,
+                        "schema": {
+                            "type": "string",
+                            "format": "date"
+                        }
+                    },
+                    {
+                        "name": "per_page",
+                        "in": "query",
+                        "description": "Pagination per page",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "Which page to render, default 1",
+                        "required": false,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Sales"
+                ],
+                "summary": "Store a newly created sales in storage",
+                "description": "Store sales",
+                "operationId": "dfb5258201d9aae6151ea5593709a02e",
+                "requestBody": {
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "$ref": "#/components/schemas/Sales"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ]
+            }
+        },
+        "/sales/{sales_code}": {
+            "delete": {
+                "tags": [
+                    "Sales"
+                ],
+                "summary": "Delete a sales",
+                "description": "Delete a specific sales by its ID.",
+                "operationId": "deleteSales",
+                "parameters": [
+                    {
+                        "name": "sales_code",
+                        "in": "path",
+                        "description": "id of Finance Invoice",
+                        "required": true,
+                        "schema": {
+                            "type": "string"
+                        }
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "sales deleted successfully"
+                    },
+                    "404": {
+                        "description": "sales not found"
+                    }
+                },
+                "security": [
+                    {
+                        "Bearer": []
+                    }
+                ]
+            }
+        },
+        "/login": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Login to systems and return the token.",
+                "description": "Do Login",
+                "operationId": "abc53c091ac89d7a2af0892997d1ee08",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "query",
+                        "description": "Login Username & Password",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "email": {
+                                    "type": "string",
+                                    "example": "admin@gmail.com"
+                                },
+                                "password": {
+                                    "type": "string",
+                                    "example": "admin"
+                                },
+                                "c_password": {
+                                    "type": "string",
+                                    "example": "admin"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        },
+        "/register": {
+            "post": {
+                "tags": [
+                    "Authentication"
+                ],
+                "summary": "Register New Account.",
+                "description": "Do Register",
+                "operationId": "f1fde7f4a932e393f6042d1b92e65b0a",
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "query",
+                        "description": "Register Username & Password",
+                        "required": true,
+                        "schema": {
+                            "properties": {
+                                "name": {
+                                    "type": "string",
+                                    "example": "admin"
+                                },
+                                "email": {
+                                    "type": "string",
+                                    "example": "admin@gmail.com"
+                                },
+                                "password": {
+                                    "type": "string",
+                                    "example": "admin"
+                                },
+                                "c_password": {
+                                    "type": "string",
+                                    "example": "admin"
+                                }
+                            },
+                            "type": "object"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "successful operation"
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Product": {
+                "title": "products",
+                "required": [
+                    "product_name"
+                ],
+                "properties": {
+                    "product_name": {
+                        "description": "product_name",
+                        "type": "string",
+                        "format": "int32",
+                        "example": "Pempek Kapal Selam"
+                    },
+                    "product_code": {
+                        "description": "product_code",
+                        "type": "string",
+                        "format": "int32",
+                        "example": "PROD-1"
+                    },
+                    "price": {
+                        "description": "price",
+                        "type": "string",
+                        "format": "int32",
+                        "example": "15000"
+                    }
+                },
+                "type": "object"
+            },
+            "Sales": {
+                "title": "Order",
+                "required": [
+                    "trans_date"
+                ],
+                "properties": {
+                    "trans_date": {
+                        "description": "trans_date",
+                        "type": "string",
+                        "format": "date"
+                    },
+                    "product_id": {
+                        "description": "contoh: [1,2,3]",
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "example": "[0]"
+                    },
+                    "sales_code": {
+                        "description": "sales_code",
+                        "type": "string",
+                        "example": "ORDER-1"
+                    },
+                    "buyer_name": {
+                        "description": "buyer_name",
+                        "type": "string",
+                        "format": "string",
+                        "example": "fulan"
+                    },
+                    "phone": {
+                        "description": "phone",
+                        "type": "string",
+                        "format": "string",
+                        "example": "08123456789"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "securitySchemes": {
+            "Bearer": {
+                "type": "apiKey",
+                "name": "Authorization",
+                "in": "header"
+            }
+        }
+    }
+}
