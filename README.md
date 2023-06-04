@@ -60,3 +60,10 @@ Jalankan server pengembangan menggunakan perintah :
 ```bash
   php artisan serve
 ```
+
+untuk Dokumentasi api diakses di "{server lokal anda}/api/docs":
+```bash
+  http://127.0.0.1:8000/api/docs
+```
+
+Authentikasi menggunakan Bearer (Access Token) Keterangan ada di API DOCS
