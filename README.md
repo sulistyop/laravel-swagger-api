@@ -1,65 +1,83 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+Berikut adalah contoh template `README.md` untuk proyek Laravel Passport di GitHub:
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+```markdown
+# Nama Proyek
 
-## About Laravel
+Penjelasan singkat tentang proyek ini.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Prasyarat
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Pastikan telah terinstal versi terbaru dari [Composer](https://getcomposer.org/) dan [Node.js](https://nodejs.org/).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Instalasi
 
-## Learning Laravel
+1. Clone repositori ini ke mesin lokal:
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+   ```bash
+   git clone https://github.com/username/repo.git
+   ```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+2. Masuk ke direktori proyek:
 
-## Laravel Sponsors
+   ```bash
+   cd repo
+   ```
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+3. Instal semua dependensi menggunakan Composer dan NPM:
 
-### Premium Partners
+   ```bash
+   composer install
+   npm install
+   ```
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+4. Salin berkas `.env.example` menjadi `.env` dan sesuaikan pengaturan database dan konfigurasi lain yang dibutuhkan:
 
-## Contributing
+   ```bash
+   cp .env.example .env
+   ```
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+5. Generate key aplikasi:
 
-## Code of Conduct
+   ```bash
+   php artisan key:generate
+   ```
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+6. Migrasikan basis data:
 
-## Security Vulnerabilities
+   ```bash
+   php artisan migrate
+   ```
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+7. Generate kunci enkripsi Passport:
 
-## License
+   ```bash
+   php artisan passport:install
+   ```
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# recap-app
+## Penggunaan
+
+Jalankan server pengembangan menggunakan perintah:
+
+```bash
+php artisan serve
+```
+
+Akses aplikasi melalui [http://localhost:8000](http://localhost:8000).
+
+## Kontribusi
+
+Silakan ikuti langkah-langkah berikut untuk berkontribusi pada proyek ini:
+
+1. Fork repositori ini.
+2. Buat cabang fitur baru (`git checkout -b fitur-baru`).
+3. Lakukan perubahan yang diperlukan dan lakukan commit (`git commit -am 'Tambahkan fitur baru'`).
+4. Push ke cabang yang dibuat (`git push origin fitur-baru`).
+5. Buat permintaan tarik (pull request) ke repositori ini.
+
+## Lisensi
+
+Proyek ini dilisensikan di bawah Lisensi MIT. Silakan lihat berkas [LICENSE](LICENSE) untuk informasi lebih lanjut.
+
+```
+
+Pastikan untuk mengganti "Nama Proyek", "username/repo", dan menambahkan informasi spesifik lainnya yang relevan dengan proyek Anda. Juga, jangan lupa menyertakan berkas lisensi yang sesuai dengan proyek Anda.
