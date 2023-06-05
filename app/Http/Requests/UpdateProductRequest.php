@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use App\Http\APIRequest;
+use Illuminate\Validation\Rule;
 
 class UpdateProductRequest extends APIRequest
 {
@@ -24,8 +25,15 @@ class UpdateProductRequest extends APIRequest
     public function rules()
     {
         return [
-            'product_name' => 'required',
-            'product_code' => 'required',
+            'product_name' => [
+                'string',
+                'required',
+                Rule::unique('products')
+            ],
+            'product_code' => [
+                'string',
+                'required'
+            ],
             'price' => 'required|integer',
         ];
     }

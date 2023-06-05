@@ -143,7 +143,7 @@ class ProductsController extends AppBaseController
             $Product = Product::where('id', $id)->get();
         }
 
-        return $this->sendResponse($Product, __('messages.product.update_success'));
+        return $this->sendResponse($Product, __('messages.product.updated_success'));
     }
 
 
